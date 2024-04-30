@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation"
 import { ChangeEvent, useState } from "react"
+import { toast } from "sonner"
 
 export default function ResetPasswordComponent({ email }: { email: string }) {
   const [isPending, setIsPending] = useState(false)
@@ -34,24 +35,33 @@ export default function ResetPasswordComponent({ email }: { email: string }) {
         },
         body: JSON.stringify(fields),
       })
-
+      
       if (response.ok) {
         if (response?.status === 200) {
-          router.replace('/auth/password-reset-success')
-          return
+          toast.success('Password reset successful', {description: 'You have successfully reset your password.'})
+          return router.replace('/auth/password-reset-success')
         }
-        alert('An error occurred. Please try again.')
+        toast.error("An error occured.", {
+          description: "Sorry, we could not reset your password by this time.",
+        })
       } else {
-        alert('An error occurred. Please try again')
+        toast.error("An error occured.", {
+          description: "Sorry, we could not reset your password by this time.",
+        })
       }
 
     } catch (error) {
       console.error(error)
       setIsPending(false)
-      alert('An error occurred. Please try again')
+      toast.error("An error occured.", {
+        description: "Sorry, we could not reset your password by this time.",
+      })
     } finally {
       setIsPending(false)
     }
+    if (isPending) {
+       toast.loading('Processing...', {description: 'Please wait while we reset your password.'})
+     } 
   }
 
   return (

@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ChangeEvent, useState } from "react"
+import { toast } from "sonner"
 
 export default function SignInComponent() {
   const [isPending, setIsPending] = useState(false)
@@ -35,27 +36,30 @@ export default function SignInComponent() {
         },
         body: JSON.stringify(fields),
       })
-
+      
       if (response.ok) {
         if (response?.status === 200) {
-          alert('Login successful')
+          toast.success('Login successful', {description: 'You have successfully logged in.'})
           router.replace('/')
           return
         }
-        alert('An error occurred. Please try again.')
+        toast.error('An error occured.', {description: 'An error occured while trying to login.'})
       } else {
-        alert('An error occurred. Please try again')
+        toast.error('An error occured.', {description: 'An error occured while trying to login.'})
       }
-
+      
     } catch (error) {
       console.error(error)
       setIsPending(false)
-      alert('An error occurred. Please try again')
+      toast.error('An error occured.', {description: 'An error occured while trying to login.'})
     } finally {
       setIsPending(false)
     }
+    if (isPending) {
+      toast.loading('Processing...', { description: 'Please wait while we log you in.' });
+    }
   }
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <Card className="w-full max-w-sm border-none shadow-lg drop-shadow-lg">

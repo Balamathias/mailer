@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ChangeEvent, useState } from "react"
+import { toast } from "sonner"
 
 export default function SignUpComponent() {
     const router = useRouter()
@@ -25,8 +26,8 @@ export default function SignUpComponent() {
     })
 
     const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
-        setIsPending(true)
         e.preventDefault()
+        setIsPending(true)
         try {
             const response = await fetch(process.env.NEXT_PUBLIC_URL + '/api/auth/sign-up', {
                 method: 'POST',
@@ -35,22 +36,24 @@ export default function SignUpComponent() {
                 },
                 body: JSON.stringify(fields),
             })
-
+            
             if (response.ok) 
-                    {
-                        if (response?.status === 201)
-                        return router.replace('/auth/verification-email-sent')
-                alert('An error occurred. Please try again.')
+                {
+                    if (response?.status === 201)
+                        toast.info('Verification email sent.', {description: 'A verification email has been sent to your email address. Please verify your email to complete the sign up process.'})
+                    return router.replace('/auth/verification-email-sent')
+                    toast.error('An error occured.', {description: 'An error occured while trying to sign up.'})
             } else {
-                alert('An error occurred. Please try again')
+                toast.error('An error occured.', {description: 'An error occured while trying to sign up.'})
             }
         } catch (error) {
             console.error(error)
             setIsPending(false)
-            alert('An error occurred. Please try again')
+            toast.error('An error occured.', {description: 'An error occured while trying to sign up.'})
         } finally {
             setIsPending(false)
         }
+        isPending ? toast.loading('Processing...', {description: 'Please wait while we sign you up.'}): null
     }
 
   return (

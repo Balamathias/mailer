@@ -4,6 +4,7 @@ import "./globals.css";
 import { clsx } from "clsx";
 import { ThemeProvider } from "@/providers/theme-provider";
 import ThemeToggle from "@/components/ThemeToggle";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,8 +31,9 @@ export default function RootLayout({
           '',
           inter.className
           )}>{children}</body>
-      </ThemeProvider>
           <ThemeToggle />
+          <Toaster />
+      </ThemeProvider>
     </html>
   );
 }
