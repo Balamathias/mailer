@@ -57,9 +57,9 @@ export default function SignUpComponent() {
     <form onSubmit={handleSubmit}>
         <Card className="w-full max-w-sm shadow-lg rounded-lg py-5 drop-shadow-lg">
             <CardHeader>
-                <CardTitle className="text-2xl py-1">Login</CardTitle>
+                <CardTitle className="text-2xl py-1">Sign up</CardTitle>
                 <CardDescription>
-                Enter your email below to login to your account.
+                Enter your personal details below to create your account.
                 </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">

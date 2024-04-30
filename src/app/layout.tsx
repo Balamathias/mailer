@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Mailer",
-  description: "Functioned by Mathias",
+  description: "A an efficient system for sending emails and messages",
 };
 
 export default function RootLayout({
