@@ -33,7 +33,7 @@ const ForgotPassword = () => {
     <WidthWrapper className="min-h-screen items-center justify-center">
         <div className="flex flex-col">
             <h1 className="text-3xl font-semibold text-primary py-2.5">Forgot password</h1>
-            <p className="text-center text-sm py-2">Enter your email address to reset your password.</p>
+            <p className="text-sm py-2">Enter your email address to reset your password.</p>
             <form className="flex flex-col gap-3" onSubmit={handle}>
                 <Input type="email" onChange={(e) => setEmail(e.target.value)} name="email" placeholder="Email address" className="input" required/>
                 <Button type="submit" className="" disabled={isPending}>{isPending? 'Processing...' : 'Send reset link'}</Button>

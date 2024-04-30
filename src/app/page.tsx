@@ -1,5 +1,6 @@
 import WidthWrapper from "@/components/WidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
+import sendMessage from "@/utils/sendMessage";
 import { LucideMail } from "lucide-react";
 import Link from "next/link";
 
