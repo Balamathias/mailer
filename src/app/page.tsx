@@ -16,7 +16,7 @@ export default async function Home() {
 
         <h2 className="text-2xl py-2 font-semibold">Get Started</h2>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           <Link href='/sign-in' className={buttonVariants({size: 'lg'})}>Sign in</Link>
           <Link href='/sign-up' className={buttonVariants({size: 'lg', variant: 'secondary'})}>Sign up</Link>
           <Link href='/checkout' className={buttonVariants({size: 'lg', variant: 'outline'})}>Checkout</Link>
