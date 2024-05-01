@@ -1,8 +1,8 @@
 import WidthWrapper from '@/components/WidthWrapper'
 import SignInComponent from '@/components/auth/SignInComponent'
+import { service } from '@/lib/vtu'
 import { Metadata } from 'next'
 import React from 'react'
-import { filterPlans } from '@/lib/vtu/utils'
 
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Sign in to your account',
 }
 
-const SignInPage = () => {
+const SignInPage = async () => {
   return (
     <WidthWrapper className="min-h-screen">
         <div className='flex flex-col gap-4 items-center justify-center'>

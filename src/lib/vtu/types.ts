@@ -47,7 +47,7 @@ export interface serviceProps {
     options: {
         phone: string,
         network: 'mtn' | 'glo' | 'airtel' | 'etisalat',
-        amount: number,
+        amount: string,
     },
     user?: {},
 }
