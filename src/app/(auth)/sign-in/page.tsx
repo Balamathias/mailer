@@ -2,6 +2,7 @@ import WidthWrapper from '@/components/WidthWrapper'
 import SignInComponent from '@/components/auth/SignInComponent'
 import { Metadata } from 'next'
 import React from 'react'
+import { filterPlans } from '@/lib/vtu/utils'
 
 
 export const metadata: Metadata = {
