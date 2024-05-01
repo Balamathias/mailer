@@ -43,7 +43,7 @@ export type VariationID =
   | '9MOB5000';
 
 export interface serviceProps {
-    type: 'airtime' | 'data' | 'cable' | 'electricity' | 'sms' | 'wallet',
+    type: 'airtime' | 'data' | 'cable' | 'electricity' | 'tv' | 'wallet',
     options: {
         phone: string,
         network: 'mtn' | 'glo' | 'airtel' | 'etisalat',
