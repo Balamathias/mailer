@@ -61,3 +61,18 @@ export interface propsWithVariationId {
     },
     user?: {},
 }
+
+export interface TVProps {
+    phone: string,
+    service_id: string,
+    smartcard_number: string,
+    variation_id: VariationID,
+}
+
+export interface electricityProps {
+    phone: string,
+    meter_number: string,
+    service_id: string,
+    variation_id: string,
+    amount: string
+}

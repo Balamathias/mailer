@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { LucideMail } from "lucide-react";
 import Link from "next/link";
 
+
 export default async function Home() {
   return (
     <WidthWrapper className="min-h-screen justify-center items-center" >

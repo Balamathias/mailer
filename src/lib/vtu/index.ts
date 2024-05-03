@@ -7,8 +7,8 @@ import { propsWithVariationId, serviceProps } from "./types"
 
 // https://vtu.ng/wp-json/api/v1/data?username=Frank&password=123456&phone=07045461790&network_id=mtn&variation_id=M1024
 
-const username = <string>process.env.NEXT_PUBLIC_VTU_USERNAME
-const password = <string>process.env.NEXT_PUBLIC_VTU_PASSWORD
+export const username = <string>process.env.NEXT_PUBLIC_VTU_USERNAME
+export const password = <string>process.env.NEXT_PUBLIC_VTU_PASSWORD
 
 export const service = async (params: serviceProps) => {
     const { type, options } = params

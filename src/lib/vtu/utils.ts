@@ -44,6 +44,52 @@ export const dataPlans: { [key: string]: string } = {
     '9MOB8000': '9mobile Data 11.5GB – 30 Days',
     '9MOB5000': '9mobile Data 15GB – 30 Days'
 }
+
+export const cableTVPackages: { [key: string]: string } = {
+    'dstv-padi': 'DStv Padi',
+    'dstv-yanga': 'DStv Yanga',
+    'dstv-confam': 'DStv Confam',
+    'dstv6': 'DStv Asia',
+    'dstv79': 'DStv Compact',
+    'dstv7': 'DStv Compact Plus',
+    'dstv3': 'DStv Premium',
+    'dstv10': 'DStv Premium Asia',
+    'dstv9': 'DStv Premium-French',
+    'confam-extra': 'DStv Confam + ExtraView',
+    'yanga-extra': 'DStv Yanga + ExtraView',
+    'padi-extra': 'DStv Padi + ExtraView',
+    'com-asia': 'DStv Compact + Asia',
+    'dstv30': 'DStv Compact + Extra View',
+    'com-frenchtouch': 'DStv Compact + French Touch',
+    'dstv33': 'DStv Premium – Extra View',
+    'dstv40': 'DStv Compact Plus – Asia',
+    'com-frenchtouch-extra': 'DStv Compact + French Touch + ExtraView',
+    'com-asia-extra': 'DStv Compact + Asia + ExtraView',
+    'dstv43': 'DStv Compact Plus + French Plus',
+    'complus-frenchtouch': 'DStv Compact Plus + French Touch',
+    'dstv45': 'DStv Compact Plus – Extra View',
+    'complus-french-extraview': 'DStv Compact Plus + FrenchPlus + Extra View',
+    'dstv47': 'DStv Compact + French Plus',
+    'dstv48': 'DStv Compact Plus + Asia + ExtraView',
+    'dstv61': 'DStv Premium + Asia + Extra View',
+    'dstv62': 'DStv Premium + French + Extra View',
+    'hdpvr-access-service': 'DStv HDPVR Access Service',
+    'frenchplus-addon': 'DStv French Plus Add-on',
+    'asia-addon': 'DStv Asian Add-on',
+    'frenchtouch-addon': 'DStv French Touch Add-on',
+    'extraview-access': 'ExtraView Access',
+    'french11': 'DStv French 11',
+    'gotv-smallie': 'GOtv Smallie',
+    'gotv-jinja': 'GOtv Jinja',
+    'gotv-jolli': 'GOtv Jolli',
+    'gotv-max': 'GOtv Max',
+    'gotv-supa': 'GOtv Supa',
+    'nova': 'Startimes Nova',
+    'basic': 'Startimes Basic',
+    'smart': 'Startimes Smart',
+    'classic': 'Startimes Classic',
+    'super': 'Startimes Super'
+}
   
 export const getPlanName = (variationId: VariationID) => dataPlans[variationId];
 
