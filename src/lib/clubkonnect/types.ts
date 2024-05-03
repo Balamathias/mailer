@@ -33,3 +33,11 @@ export interface DataBundleProps {
     requestID: string;
     callBackURL: string;
 }
+
+export interface EpinsProps {
+    mobileNetwork: '01' | '02' | '03' | '04';
+    value: number;
+    quantity: number;
+    requestID: string;
+    callBackURL: string;
+}

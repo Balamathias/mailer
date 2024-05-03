@@ -1,6 +1,6 @@
 
 import { apiKey, siteURL, userID } from "./config";
-import { AirtimeProps, DataBundleProps } from "./types";
+import { AirtimeProps, DataBundleProps, EpinsProps } from "./types";
 
 /**
  * @description: A library to interact with ClubKonnect API
@@ -164,49 +164,12 @@ class ClubConnect {
      * @description: Get available services
      * @returns: A list of available services 
      */
-    async getAvailableServices() {
+    async getAvailableEpinServices() {
         try {
-            const url = `${this._nelloURL}/APIAirtimeDiscountV1.asp?UserID=${userID}`;
+            const url = `${this._nelloURL}/APIEPINDiscountV1.asp`;
             const res = await fetch(url);
             if (!res.ok) {
                 throw new Error('Error fetching available services');
-            }
-            const data = await res.json();
-            return { data, status: res.status };
-        } catch (error: any) {
-            throw new Error(error);
-        }
-    }
-
-    async buyDataBundle(props: DataBundleProps) {
-        try {
-            const {
-                mobileNetwork,
-                dataPlan,
-                mobileNumber,
-                requestID,
-                callBackURL,
-            } = props;
-
-            const url = `${this._nelloURL}/APIDatabundleV1.asp?UserID=${userID}&APIKey=${apiKey}&MobileNetwork=${mobileNetwork}&DataPlan=${dataPlan}&MobileNumber=${mobileNumber}&RequestID=${requestID}&CallBackURL=${callBackURL}`;
-
-            const res = await fetch(url);
-            if (!res.ok) {
-                throw new Error('Error buying data bundle');
-            }
-            const data = await res.json();
-            return { data, status: res.status };
-        } catch (error: any) {
-            throw new Error(error);
-        }
-    }
-
-    async getAvailableDataBundlePlans() {
-        try {
-            const url = `${this._nelloURL}/APIDatabundlePlansV2.asp?UserID=${userID}`;
-            const res = await fetch(url);
-            if (!res.ok) {
-                throw new Error('Error fetching available data bundle plans');
             }
             const data = await res.json();
             return { data, status: res.status };
